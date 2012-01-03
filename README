@@ -1,0 +1,29 @@
+
+# Kludgy opencv bindings.
+# This folder is on my PYTHONPATH (set by ~/.bashrc)
+
+# I (jon) don't know where these files originated,
+# but I do know that they refer explicitly to OpenCV version 2.3 ,
+# which as of the writing of this README file (Jan 2, 2012),
+# is the latest version
+
+# in order to please cv2.so , I (jon) created these soft links:
+# (below is an excerpt from my bash history)
+
+  496  cd /usr/local/lib/
+  497  l
+  498  ln -s /opt/local/lib/libopencv_core.2.3.dylib libopencv_core.2.3.dylib
+  499  ln -s /opt/local/lib/libopencv_flann.2.3.dylib libopencv_flann.2.3.dylib
+  500  ln -s /opt/local/lib/libopencv_imgproc.2.3.dylib libopencv_imgproc.2.3.dylib
+  501  ln -s /opt/local/lib/libopencv_video.2.3.dylib libopencv_video.2.3.dylib
+  502  ln -s /opt/local/lib/libopencv_ml.2.3.dylib libopencv_ml.2.3.dylib
+  503  ln -s /opt/local/lib/libopencv_features2d.2.3.dylib libopencv_features2d.2.3.dylib
+  504  ln -s /opt/local/lib/libopencv_highgui.2.3.dylib libopencv_highgui.2.3.dylib
+  505  ln -s /opt/local/lib/libopencv_calib3d.2.3.dylib libopencv_calib3d.2.3.dylib
+  506  ln -s /opt/local/lib/libopencv_objdetect.2.3.dylib libopencv_objdetect.2.3.dylib
+  507  ln -s /opt/local/lib/libopencv_legacy.2.3.dylib libopencv_legacy.2.3.dylib
+  508  ln -s /opt/local/lib/libopencv_contrib.2.3.dylib libopencv_contrib.2.3.dylib
+
+# this was all after using MacPorts to install opencv, like so:
+sudo port -k install opencv +tbb +python27 # +tbb is for Thread Building Blocks. +python27 didn't seem to work, which is why this folder and the above soft links exist, to bind by hand
+
